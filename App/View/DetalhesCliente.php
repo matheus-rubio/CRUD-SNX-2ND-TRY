@@ -1,5 +1,5 @@
 <section>
-    <h1 class="text-center">Visualisar</h1>
+    <h1 class="text-center">Visualizar</h1>
     <hr>
 
     <div class="text-center mt-3 mb-4">

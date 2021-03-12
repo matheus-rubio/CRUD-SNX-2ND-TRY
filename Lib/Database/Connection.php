@@ -12,4 +12,13 @@
             }
             return self::$conn;
         }
+
+        public static function getConnUsers()
+        {
+            if(self::$conn == null)
+            {
+                self::$conn = new PDO('mysql: host=localhost; dbname=crud;', 'root', '');    
+            }
+            return self::$conn;
+        }
     }

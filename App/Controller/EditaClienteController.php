@@ -31,10 +31,10 @@ class EditaClienteController
             Clientes::update($_POST);
 
             echo '<script>alert("Cliente cadastrado com sucesso!")</script>';
-            // echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=Clientes"</script>';
+            echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=Clientes"</script>';
         } catch (Exception $e) {
             echo '<script>alert("' . $e->getMessage() . '")</script>';
-            // echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=CadastraCliente"</script>';
+            echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=CadastraCliente"</script>';
         }
     }
 }

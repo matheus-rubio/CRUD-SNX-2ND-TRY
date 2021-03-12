@@ -6,9 +6,12 @@ require_once 'App/Controller/ClientesController.php';
 require_once 'App/Controller/ErroController.php';
 require_once 'App/Controller/CadastraClienteController.php';
 require_once 'App/Controller/EditaClienteController.php';
+require_once 'App/Controller/EditaConfigController.php';
 require_once 'App/Controller/DetalhesClienteController.php';
+require_once 'App/Controller/LoginController.php';
 
 require_once 'App/Model/Clientes.php';
+require_once 'App/Model/Validacao.php';
 
 require_once 'Lib/Database/Connection.php';
 
