@@ -4,6 +4,7 @@ class DetalhesClienteController
 {
     public function index($params)
     {
+        session_start();
         if (isset($_SESSION['UsuarioCpf'])) {
             try {
                 $clientes = Clientes::selecionaPorId($params);

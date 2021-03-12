@@ -36,6 +36,7 @@ class EditaClienteController
 
     public function update()
     {
+        session_start();
         if (isset($_SESSION['UsuarioCpf'])) {
             try {
                 Clientes::update($_POST);

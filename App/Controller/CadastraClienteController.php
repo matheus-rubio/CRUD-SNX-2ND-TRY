@@ -4,6 +4,7 @@ class CadastraClienteController
 {
     public function index()
     {
+        session_start();
         if (isset($_SESSION['UsuarioCpf'])) {
             try {
                 $clientes = Clientes::selecionaTodos();
@@ -32,6 +33,7 @@ class CadastraClienteController
 
     public function insert()
     {
+        session_start();
         if (isset($_SESSION['UsuarioCpf'])) {
             try {
                 Clientes::insert($_POST);

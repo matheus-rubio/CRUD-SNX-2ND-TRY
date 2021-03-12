@@ -4,6 +4,7 @@ class ClientesController
 {
     public function index()
     {
+        session_start();
         if (isset($_SESSION['UsuarioCpf'])) {
             try {
                 $clientes = Clientes::selecionaTodos();
@@ -32,6 +33,7 @@ class ClientesController
 
     public function delete($id)
     {
+        session_start();
         if (isset($_SESSION['UsuarioCpf'])) {
             try {
                 Clientes::delete($id);

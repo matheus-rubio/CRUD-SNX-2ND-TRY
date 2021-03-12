@@ -5,19 +5,16 @@ class LoginController
     public function index()
     {
         session_start();
-        if(isset($_SESSION['UsuarioCpf']))
-        {
+        if (isset($_SESSION['UsuarioCpf'])) {
             echo '<script>alert("Você já está logado!")</script>';
             echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=clientes"</script>';
-        }
-        else
-        {
+        } else {
             try {
 
                 $loader = new \Twig\Loader\FilesystemLoader('App\View');
                 $twig = new \Twig\Environment($loader);
                 $template = $twig->load('login.php');
-    
+
                 $conteudo = $template->render();
                 echo $conteudo;
             } catch (Exception $e) {
@@ -40,8 +37,7 @@ class LoginController
             echo $conteudo;
             exit;
         } else {
-            for($i = 0; $i < sizeof($usuarios); $i++)
-            {   
+            for ($i = 0; $i < sizeof($usuarios); $i++) {
                 if ($_POST['usuario'] == $usuarios[$i]->cpf && md5($_POST['senha'])  == $usuarios[$i]->senha) {
                     if (!isset($_SESSION)) session_start();
 
@@ -61,9 +57,14 @@ class LoginController
     public function logout()
     {
         session_start();
-        session_destroy();
-        $error = "Você deslogou.";
-        echo $error . '<br><br>';
-        echo 'Clique <a href="http://localhost/crud-snx-2nd-try/?pagina=login">aqui</a> para realizar o login.';
+        if (isset($_SESSION['UsuarioCpf'])) {
+            session_destroy();
+            $error = "Você deslogou.";
+            echo $error . '<br><br>';
+            echo 'Clique <a href="http://localhost/crud-snx-2nd-try/?pagina=login">aqui</a> para realizar o login.';
+        } else {
+            echo '<script>alert("Você precisa estar logado para acessar esta página!")</script>';
+            echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=login"</script>';
+        }
     }
 }
