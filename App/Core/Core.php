@@ -7,7 +7,7 @@ class Core
         if (isset($urlGet['pagina'])) {
             $controller = ucFirst($urlGet['pagina'] . 'Controller');
         } else {
-            $controller = 'ClientesController';
+            $controller = 'LoginController';
         }
 
         if (isset($urlGet['metodo'])) {

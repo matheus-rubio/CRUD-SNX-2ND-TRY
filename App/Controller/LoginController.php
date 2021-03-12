@@ -4,16 +4,25 @@ class LoginController
 {
     public function index()
     {
-        try {
+        session_start();
+        if(isset($_SESSION['UsuarioCpf']))
+        {
+            echo '<script>alert("Você já está logado!")</script>';
+            echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=clientes"</script>';
+        }
+        else
+        {
+            try {
 
-            $loader = new \Twig\Loader\FilesystemLoader('App\View');
-            $twig = new \Twig\Environment($loader);
-            $template = $twig->load('login.php');
-
-            $conteudo = $template->render();
-            echo $conteudo;
-        } catch (Exception $e) {
-            echo $e->getMessage();
+                $loader = new \Twig\Loader\FilesystemLoader('App\View');
+                $twig = new \Twig\Environment($loader);
+                $template = $twig->load('login.php');
+    
+                $conteudo = $template->render();
+                echo $conteudo;
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
     }
 
@@ -47,5 +56,14 @@ class LoginController
             echo '<script>alert("Login ou senha Incorreto!")</script>';
             echo '<script>location.href="http://localhost/crud-snx-2nd-try/?pagina=login"</script>';
         }
+    }
+
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+        $error = "Você deslogou.";
+        echo $error . '<br><br>';
+        echo 'Clique <a href="http://localhost/crud-snx-2nd-try/?pagina=login">aqui</a> para realizar o login.';
     }
 }

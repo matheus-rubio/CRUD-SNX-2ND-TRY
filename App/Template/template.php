@@ -29,7 +29,7 @@
                     <a id="navButton" class="nav-link" href="http://localhost/crud-snx-2nd-try/?pagina=EditaConfig">Configurações <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a id="navButton" class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+                    <a id="navButton" class="nav-link" href="http://localhost/crud-snx-2nd-try/?pagina=login&metodo=logout">Logout <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
