@@ -2,8 +2,11 @@
 
 require_once 'App/Core/Core.php';
 
-require_once 'App/Controller/LoginController.php';
+require_once 'App/Controller/ClientesController.php';
 require_once 'App/Controller/ErroController.php';
+require_once 'App/Controller/CadastraClienteController.php';
+require_once 'App/Controller/EditaClienteController.php';
+require_once 'App/Controller/DetalhesClienteController.php';
 
 require_once 'App/Model/Clientes.php';
 
