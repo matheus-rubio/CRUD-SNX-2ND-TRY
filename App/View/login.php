@@ -96,7 +96,7 @@
                     <form action="?pagina=login&metodo=login" method="post">
                         <div class="form-group">
                             <label>Cpf</label>
-                            <input type="text" class="form-control" placeholder="Usuário" name="usuario">
+                            <input type="text" class="form-control" id="cpf" placeholder="Usuário" name="usuario">
                         </div>
                         <div class="form-group">
                             <label>Senha</label>

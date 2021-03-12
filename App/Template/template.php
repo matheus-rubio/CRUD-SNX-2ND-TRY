@@ -41,7 +41,13 @@
     {{area_dinamica}}
     
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+    
+        $('#cnpjCliente').mask('00.000.000/0000-00', {reverse: true});
+        $('#cpf').mask('000.000.000-00', {reverse: true});
+    </script>
 </body>
 
 </html>
